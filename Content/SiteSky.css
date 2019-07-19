@@ -1,0 +1,91 @@
+﻿
+/*h2 {
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+}*/
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: darkgray;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(skycars.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.heading {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    font: bold;
+    text-shadow: 4px 2px 2px #0745ee;
+}
+
+.headie {
+    color: #0745ee;
+    font: bold;
+    text-shadow: 2px 1px 1px black;
+}
+.profile {
+    padding: 20px;
+    background-color: ThreeDDarkShadow;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.links {
+    color: deepskyblue;
+    font: bold;
+
+}
+
+.linksnew {
+    color: darkseagreen;
+    font: bold;
+
+}
+
+.linksnewmain {
+    color: darkseagreen;
+    font-size: 18px;
+    font: bold;
+}
+
+#tablehead {
+    font-size: 16px;
+    font: bold;
+    color: #0745ee;
+    text-shadow: 2px 1px 1px black;
+}
+
+.linksdel {
+    color: red;
+    font: bolder;
+
+}
+
+.searchbox {
+    color: black;
+    text-decoration-color: black;
+
+}
+
+.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+.tempmessage {
+    color: mediumspringgreen;
+    font-weight: bolder;
+}
+
+.tempborder {
+    border:double;
+    border-color: red;
+}
+

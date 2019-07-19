@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SkyInsuranceThird.Models.User>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2 class="headie">Search for User</h2>
+
+<div class="profile">
+    <p>
+        @using (Html.BeginForm("Search", "SkyInsurance", FormMethod.Get))
+        {
+            <b>Search By :</b>
+            @Html.RadioButton("searchBy", "Name", true) <text> Name </text>
+            @Html.RadioButton("searchBy", "Postcode") <text> Postcode </text>
+            @Html.RadioButton("searchBy", "Registration") <text>  Registration </text>
+
+            @Html.TextBox("search", null, new { @class = "searchbox", required="required" }) <input type="submit" value="Search" class="btn-default" />
+        }
+    </p>
+
+    @if (Model != null)
+    {
+        <table class="table">
+            <tr>
+                <th class="text-center" id="tablehead">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+
+                <th class="text-center" id="tablehead">
+                    @Html.DisplayNameFor(model => model.Postcode)
+                </th>
+                
+                <th class="text-center" id="tablehead">
+                    Details
+                </th>
+            </tr>
+
+
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Postcode)
+                </td>
+                
+                <td class="text-center">
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                </td>
+            </tr>
+            }
+            
+        </table>
+    }
+
+    </div>

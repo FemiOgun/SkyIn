@@ -1,0 +1,76 @@
+﻿@model SkyInsuranceThird.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="headie">Details</h2>
+
+
+<div class="profile">
+    <div>
+        <h4 class="headie">User</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Postcode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Postcode)
+            </dd>
+
+        </dl>
+
+
+
+        <h4 class="headie"> List of Vehicles</h4>
+        <table class="table">
+            <tr>
+                <th class="headie">
+                    Make &amp; Model
+                </th>
+                <th class="headie">
+                    Registration
+                </th>
+                <th class="headie">
+                    Delete
+                </th>
+
+            </tr>
+
+            @foreach (var vehicle in Model.Vehicles)
+            {
+                <tr>
+
+
+                    <td>
+                        @vehicle.MakeModel <br />
+                    </td>
+                    <td>
+                        @vehicle.Registration
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("Delete Vehicle", "DeleteVehicle", new { id = vehicle.Id }, new { @class = "btn btn-danger btn-xs" })
+                       
+                    </td>
+
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit User", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary btn-xs" }) |
+    @Html.ActionLink("Add Vehicle", "CreateVehicle", new { id = Model.Id }, new { @class = "btn btn-success btn-xs" }) |
+    @Html.ActionLink("Back to List", "Index", "SkyInsurance", null,  new { @class = "btn btn-primary btn-xs" })
+</p>
